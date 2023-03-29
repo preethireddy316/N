@@ -1,0 +1,25 @@
+<p>add-product works!</p>
+<div class="form-area">
+    <h3>Create Product</h3>
+    <form [formGroup]="form" *ngIf="form">
+      <label>Product Name</label>
+      <input formControlName="name" type="text" name="name" type="text">
+      <br/>
+      <span *ngIf="form.get('name')?.['invalid'] && form.get('name')?.['touched']" class="alert alert-danger">Required</span>
+      <label>Product Description</label>
+      <input formControlName="desc" type="text" name="desc" type="text">
+      <br/>
+
+      <span *ngIf="form.get('desc')?.['invalid'] && form.get('desc')?.['touched']" class="alert alert-danger">Required</span>
+
+      <label>Product Price</label>
+      <input formControlName="price" type="text" name="price" type="text">
+      <br/>
+
+      <span *ngIf="form.get('price')?.['invalid'] && form.get('price')?.['touched']" class="alert alert-danger">Required</span>
+
+      <button (click)="onAddProduct()" class="btn btn-primary">Add Product</button>
+      <button type="button" (click)="onReset()" class="btn">Reset</button>
+    </form>
+  </div>
+

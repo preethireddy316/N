@@ -1,0 +1,20 @@
+<p>edit-product works!</p>
+<div class="form-area">
+    <h3>Create Product</h3>
+    <form [formGroup]="updateForm" *ngIf="updateForm">
+      <label>Product Name</label>
+      <input formControlName="name" type="text" name="name" type="text">
+      <br/>
+      <span *ngIf="updateForm.get('name')?.['invalid'] && updateForm.get('name')?.['touched']" class="alert alert-danger">Required</span>
+      <label>Product Description</label>
+      <input formControlName="desc" type="text" name="desc" type="text">
+      <br/>
+      <span *ngIf="updateForm.get('desc')?.['invalid'] && updateForm.get('desc')?.['touched']" class="alert alert-danger">Required</span>
+      <label>Product Price</label>
+      <input formControlName="price" type="text" name="price" type="text">
+      <br/>
+      <span *ngIf="updateForm.get('price')?.['invalid'] && updateForm.get('price')?.['touched']" class="alert alert-danger">Required</span>
+      <button (click)="onUpdateProduct()" class="btn btn-primary">Update Product</button>
+      <button type="button" (click)="onReset()" class="btn">Reset</button>
+    </form>
+</div>

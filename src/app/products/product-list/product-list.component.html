@@ -1,0 +1,41 @@
+<p>product-list works!</p>
+<!-- <div class="main-area"> -->
+    <div class="content-area">
+        <!-- <div>
+          <a href="#" class="btn btn-primary" [routerLink]="['/products/add']"
+            >Add Post</a>
+        </div> -->
+        <div class="container">
+          <!--Add product form-->
+         
+    
+          <!--Display product area-->
+          <div class="product-display-area">
+            <h3>All Products</h3>
+            <table id="products">
+              <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th></th>
+              </tr>
+              <tr *ngFor="let product of products">
+                <td>{{product.id}}</td>
+                <td>{{product.name}}</td>
+                <td>{{product.desc}}</td>
+                <td>{{product.price}}</td>
+                <td>
+                  <button [routerLink]="['edit',product.id]" class="btn">Edit</button>
+                  <button (click)="onDeleteProduct(product.id)" class="btn-delete">Delete</button></td>
+              </tr>
+            </table>
+            <hr>
+           
+          </div>
+        </div>
+      </div>
+
+      <button [routerLink]="['add']">Add Product</button>
+
+      <router-outlet></router-outlet>
