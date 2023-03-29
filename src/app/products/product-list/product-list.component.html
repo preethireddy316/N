@@ -26,8 +26,8 @@
                 <td>{{product.desc}}</td>
                 <td>{{product.price}}</td>
                 <td>
-                  <button [routerLink]="['edit',product.id]" class="btn">Edit</button>
-                  <button (click)="onDeleteProduct(product.id)" class="btn-delete">Delete</button></td>
+                  <button [routerLink]="['edit',product.id]" class="btn btn-secondary">Edit</button>
+                  <button (click)="onDeleteProduct(product.id)" class="btn btn-danger">Delete</button></td>
               </tr>
             </table>
             <hr>
@@ -36,6 +36,6 @@
         </div>
       </div>
 
-      <button [routerLink]="['add']">Add Product</button>
+      <button [routerLink]="['add']" class="btn btn-success">Add Product</button>
 
       <router-outlet></router-outlet>

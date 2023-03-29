@@ -30,7 +30,7 @@ const _productReducer = createReducer(
     console.log(updProducts,"after deletion sate products")
     return {
         ...state,
-        products:updProducts
+        products:[...updProducts]
     }
   })
 );

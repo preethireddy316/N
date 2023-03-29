@@ -30,14 +30,16 @@ export class AddProductComponent {
   {
      console.log(Object.keys(form.controls))
      Object.keys(form.controls).forEach(each=>{
-      let eachKey=(this.form.get(each))
+      let eachKey=(form.get(each))
       eachKey?.markAsTouched()
      })
     }
-
-
+    
   onAddProduct(){
     this.validateAllFormFields(this.form)
+    if (!this.form.valid) {
+      return;
+    }
     const product={name:this.form.value.name,
     desc:this.form.value.desc,
     price:this.form.value.price}

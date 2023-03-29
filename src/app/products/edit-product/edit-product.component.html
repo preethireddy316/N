@@ -15,6 +15,6 @@
       <br/>
       <span *ngIf="updateForm.get('price')?.['invalid'] && updateForm.get('price')?.['touched']" class="alert alert-danger">Required</span>
       <button (click)="onUpdateProduct()" class="btn btn-primary">Update Product</button>
-      <button type="button" (click)="onReset()" class="btn">Reset</button>
+      <button type="button" (click)="onReset()" class="btn btn-secondary">Reset</button>
     </form>
 </div>

@@ -1,7 +1,7 @@
 <p>add-product works!</p>
 <div class="form-area">
     <h3>Create Product</h3>
-    <form [formGroup]="form" *ngIf="form">
+    <form [formGroup]="form">
       <label>Product Name</label>
       <input formControlName="name" type="text" name="name" type="text">
       <br/>
@@ -19,7 +19,7 @@
       <span *ngIf="form.get('price')?.['invalid'] && form.get('price')?.['touched']" class="alert alert-danger">Required</span>
 
       <button (click)="onAddProduct()" class="btn btn-primary">Add Product</button>
-      <button type="button" (click)="onReset()" class="btn">Reset</button>
+      <button type="button" (click)="onReset()" class="btn btn-secondary">Reset</button>
     </form>
   </div>
 
